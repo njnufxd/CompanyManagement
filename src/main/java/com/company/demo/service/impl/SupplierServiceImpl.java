@@ -37,4 +37,23 @@ public class SupplierServiceImpl implements SupplierService {
         result.setData(supplierDO);
         return result;
     }
+
+    @Override
+    public Result<SupplierDO> add(SupplierDO supplierDO) {
+        Result<SupplierDO> result=new Result<>();
+        if (StringUtils.isEmpty(supplierDO.getName())){
+            result.setCode("600");
+            result.setMessage("供应商名不能为空");
+            return result;
+        }
+        SupplierDO supplierDO1=supplierDAO.findByName(supplierDO.getName());
+        if (supplierDO1!=null){
+            result.setCode("601");
+            result.setMessage("该供应商已存在");
+            return result;
+        }
+        result.setSuccess(true);
+        result.setData(supplierDO);
+        return result;
+    }
 }

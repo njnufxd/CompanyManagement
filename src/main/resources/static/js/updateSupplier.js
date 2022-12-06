@@ -7,8 +7,9 @@ const supplierName = document.querySelectorAll(".supplierName");
 const description = document.querySelector(".description");
 const createdTime = document.querySelector(".createdTime");
 const modifiedTime = document.querySelector(".modifiedTime");
+const error=document.querySelector(".error");
 let data = {};
-fetch(`http://127.0.0.1:8080/api/supplier/get?id=${id.innerHTML}`)
+fetch(`/api/supplier/get?id=${id.innerHTML}`)
   .then(function (response) {
     return response.json();
   })
@@ -40,7 +41,7 @@ submit.addEventListener("click", function () {
       name: supplierName.value,
       description: description.value,
     };
-    fetch(`http://127.0.0.1:8080/api/supplier/update`, {
+    fetch(`/api/supplier/update`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",
@@ -55,7 +56,8 @@ submit.addEventListener("click", function () {
           alert("修改成功");
           location.reload();
         } else {
-          alert(`result.message`);
+          error.innerHTML=result.message;
+          alert(result.message);
         }
       });
   }
@@ -72,7 +74,7 @@ let pageSize = 10;
 let contacts = [];
 
 function loadContacts() {
-  fetch(`http://127.0.0.1:8080/api/contact/getBySupplierId?id=${id.innerHTML}`)
+  fetch(`/api/contact/getBySupplierId?id=${id.innerHTML}`)
     .then(function (response) {
       return response.json();
     })

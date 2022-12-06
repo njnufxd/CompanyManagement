@@ -24,6 +24,7 @@ const email = document.querySelector(".email");
 const responsibility = document.querySelector(".responsibility");
 const notes = document.querySelector(".notes");
 const updateContact = document.querySelector(".updateContact");
+const datalist=document.querySelector(".datalist");
 let supplierList = [];
 let data = {};
 let records=[];
@@ -84,6 +85,21 @@ fetch(`/api/contact/get?id=${id.innerHTML}`)
         });
       });
   });
+  fetch(`/api/company/all`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (result) {
+      {
+        let companyList = result.data;
+        console.log(companyList);
+        companyList.forEach(function (elem, index, a) {
+          const option = document.createElement("option");
+          option.value = elem.companyName;
+          datalist.append(option);
+        });
+      }
+    });
 const confirmButton = document.querySelector(".confirm");
 const supplierName = document.querySelector(".supplierName");
 function supplier() {
@@ -125,7 +141,7 @@ updateContact.addEventListener("click", function () {
     responsibility: responsibility.value,
     notes: notes.value,
   };
-  fetch(`/api/contact/update`, {
+  fetch(`/api/contact/update?companyName=${companyInput.value}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",

@@ -1,0 +1,54 @@
+div.supplier {
+  width: 1500px;
+}
+div.supplier ul li {
+  margin: 1px;
+  width: 100%;
+  display: flex;
+}
+div.supplier ul:first-child li {
+  width: 370px;
+}
+div.supplier ul:first-child li div {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #f7f7f7;
+  margin-bottom: 2px;
+}
+div.supplier ul:first-child li input {
+  padding: 0;
+  border: 0;
+  width: 270px;
+  height: 30px;
+  line-height: 30px;
+  background-color: azure;
+  outline: none;
+}
+div.supplier ul:nth-child(2) li {
+  text-align: center;
+  margin-right: 2px;
+}
+div.supplier ul:nth-child(2) li div {
+  height: 100%;
+  line-height: 300px;
+  width: 100px;
+  text-align: center;
+  background: #f7f7f7;
+  margin-bottom: 2px;
+}
+div.supplier ul:nth-child(2) li textarea {
+  padding: 0;
+  width: 270px;
+  border: 0;
+  height: 300px;
+  background: azure;
+  word-wrap: break-word;
+  outline: none;
+}
+button {
+  margin: 30px 20px;
+  width: 60px;
+  height: 40px;
+}

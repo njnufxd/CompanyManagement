@@ -25,6 +25,7 @@ div.supplier ul:first-child li .supplierId {
   background: #f7f7f7;
 }
 div.supplier ul:first-child li input {
+  padding: 0;
   border: 0;
   width: 270px;
   height: 30px;
@@ -45,6 +46,8 @@ div.supplier ul:nth-child(2) li div {
   margin-bottom: 2px;
 }
 div.supplier ul:nth-child(2) li textarea {
+  padding: 0;
+  width: 270px;
   border: 0;
   height: 300px;
   background: azure;

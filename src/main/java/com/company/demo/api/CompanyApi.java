@@ -15,6 +15,7 @@ import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.util.ListUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,13 +95,17 @@ public class CompanyApi {
         CompanyDO companyDO=companyDAO.findByIds(ids).get(0);
         List<ContactDO> contactDOs=contactDAO.findByCompanyId(companyDO.getId());
         ids=new ArrayList<>();
-        for (ContactDO contactDO : contactDOs) {
-            ids.add(contactDO.getId());
+        if (!ListUtils.isEmpty(contactDOs)) {
+            for (ContactDO contactDO : contactDOs) {
+                ids.add(contactDO.getId());
+            }
         }
-        contactDAO.delByCompanyId(id);
-        recordDAO.delByContactIds(ids);
         if (companyDAO.delete(id)>0){
             result.setSuccess(true);
+            contactDAO.delByCompanyId(id);
+            if (!ListUtils.isEmpty(ids)) {
+                recordDAO.delByContactIds(ids);
+            }
         }else {
             result.setMessage("删除失败");
         }
@@ -112,6 +117,14 @@ public class CompanyApi {
         List<CompanyDO> companyDOs=companyDAO.search(companyName);
         Result<List<CompanyDO>> result=new Result<>();
         result.setData(companyDOs);
+        result.setSuccess(true);
+        return result;
+    }
+    @GetMapping("/api/company/all")
+    @ResponseBody
+    public Result<List<CompanyDO>> all(){
+        Result<List<CompanyDO>> result=new Result<>();
+        result.setData(companyDAO.findAll());
         result.setSuccess(true);
         return result;
     }

@@ -38,7 +38,6 @@ public class RecordApi {
         HttpSession session=request.getSession();
         recordDO.setId(UUIDUtils.getUUID());
         Long userId= (Long) session.getAttribute("userId");
-        System.out.println(userId);
         recordDO.setCreatedId(userId);
         recordDO.setModifiedId(userId);
         if (recordDO.getSupplierId()==null){
@@ -106,7 +105,6 @@ public class RecordApi {
             result.setCode("600");
             return result;
         }
-        System.out.println(id);
         if (recordDAO.delete(id)<=0){
             result.setCode("601");
             result.setMessage("删除失败");

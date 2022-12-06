@@ -156,21 +156,4 @@ public class UserAPI {
     public UserDO findByUserName(@RequestParam("userName") String userName) {
         return userDAO.findByUserName(userName);
     }
-
-    @GetMapping("/user/search")
-    @ResponseBody
-    public List<UserDO> search(@RequestParam("keyWord") String keyWord,
-                               @RequestParam("startTime") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-                               LocalDateTime startTime,
-                               @RequestParam("endTime") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-                               LocalDateTime endTime) {
-        return userDAO.search(keyWord, startTime, endTime);
-    }
-
-    @GetMapping("/user/findByIds")
-    @ResponseBody
-    public List<UserDO> findByIds(@RequestParam("ids") List<Long> ids) {
-        return userDAO.findByIds(ids);
-    }
-
 }

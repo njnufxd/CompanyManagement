@@ -46,4 +46,19 @@ public class SupplierController {
         model.addAttribute("supplierId",id);
         return "updateSupplier";
     }
+    @GetMapping("/addSupplier")
+    public String addSupplier(Model model, HttpServletRequest request){
+        HttpSession session=request.getSession();
+        Long userId= (Long) session.getAttribute("userId");
+        if (userId==null){
+            return "redirect:/login";
+        }
+        User user=userService.getById(userId);
+        if (user==null){
+            session.removeAttribute("userId");
+            return "redirect:/login";
+        }
+        model.addAttribute("userName",user.getUserName() );
+        return "addSupplier";
+    }
 }

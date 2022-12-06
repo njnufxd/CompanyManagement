@@ -152,6 +152,7 @@ public class ContactApi {
     @PostMapping("/api/contact/update")
     @ResponseBody
     public Result<ContactDO> update(@RequestParam(value = "companyName",required = false)String companyName,@RequestBody ContactDO contactDO){
+        System.out.println(companyName);
         Result<ContactDO> result=new Result<>();
         if (contactDO.getId()==null){
             result.setCode("600");
@@ -198,9 +199,9 @@ public class ContactApi {
         Result result=new Result();
         List<String> ids=new ArrayList<>();
         ids.add(id);
-        recordDAO.delByContactIds(ids);
         if (contactDAO.delete(id)>0){
             result.setSuccess(true);
+            recordDAO.delByContactIds(ids);
         }else {
             result.setMessage("删除失败");
         }
@@ -209,8 +210,8 @@ public class ContactApi {
 
     @GetMapping("/api/contact/getBySupplierId")
     @ResponseBody
-    public Result<List<ContactDO>> getBySupplierId(@RequestParam("id") Long id){
-        Result<List<ContactDO>> result=new Result<>();
+    public Result<List<Contact>> getBySupplierId(@RequestParam("id") Long id){
+        Result<List<Contact>> result=new Result<>();
         if (id==null){
             result.setMessage("id不能为空");
             result.setCode("600");
@@ -224,8 +225,12 @@ public class ContactApi {
             return result;
         }
         List<ContactDO> contactDOs=contactDAO.findBySupplierId(id);
+        List<Contact> contacts=new ArrayList<>();
+        for (ContactDO contactDO : contactDOs) {
+            contacts.add(contactDO.toModel());
+        }
         result.setSuccess(true);
-        result.setData(contactDOs);
+        result.setData(contacts);
         return result;
     }
 }

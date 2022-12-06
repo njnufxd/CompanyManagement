@@ -11,7 +11,7 @@ const qq=document.querySelector(".qq");
 const tel=document.querySelector(".tel");
 const id=document.querySelector(".id");
 fetch(
-    `api/user/get`
+    `api/user/get?id=${id.innerHTML}`
 ).then(function(response){
     return response.json();
 }).then(function(result){

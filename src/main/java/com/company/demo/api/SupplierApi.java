@@ -65,7 +65,6 @@ public class SupplierApi {
     @ResponseBody
     public Result del(@RequestParam(value = "id")Long id){
         Result result=new Result<>();
-        recordDAO.delBySupplierId(id);
         List< ContactDO> contactDOs=contactDAO.findBySupplierId(id);
         List<String> ids=new ArrayList<>();
         for (ContactDO contactDO : contactDOs) {
@@ -74,6 +73,7 @@ public class SupplierApi {
         contactDAO.updateSupplierId(ids);
         if (supplierDAO.delete(id)>0){
             result.setSuccess(true);
+            recordDAO.delBySupplierId(id);
         }else {
             result.setMessage("删除失败");
         }
@@ -101,6 +101,13 @@ public class SupplierApi {
     @ResponseBody
     public Result<SupplierDO> update(@RequestBody SupplierDO supplierDO){
         Result<SupplierDO> result=supplierService.update(supplierDO);
+        return result;
+    }
+
+    @PostMapping("/api/supplier/add")
+    @ResponseBody
+    public Result<SupplierDO> add(@RequestBody SupplierDO supplierDO){
+        Result<SupplierDO> result=supplierService.add(supplierDO);
         return result;
     }
 }

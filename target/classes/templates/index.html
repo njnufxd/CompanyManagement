@@ -17,8 +17,6 @@
                 <a th:unless="${user==null}" href="/records"><li  class="records">联系记录</li></a>
                 <a th:unless="${user==null}" href="/users"><li  class="users">用户管理</li></a>
                 <a th:unless="${user==null}" href="/suppliers"><li  class="suppliers">供应商</li></a>
-                <a th:unless="${user==null}" href=""><li class="userSuppliers">用户供应商</li></a>
-                <a th:unless="${user==null}" href=""><li class="userContacts">用户联系人</li></a>
                 <a th:unless="${user==null}" href="/self"><li  class="self">个人信息</li></a>
                 <li th:unless="${user==null}"  class="quit" th:text="'退出'+'('+${userName}+')'"></li>
                 <a th:if="${user==null}" href="/login"><li  class="login">登录</li></a>
@@ -29,14 +27,14 @@
         <a href="/index">首页</a>
     </div>
     <main>
-        <h2 class="name">久特用户管理平台</h2>
+        <h2 class="name">平台名字</h2>
         <p th:unless="${user==null}">您上次登录的时间是:<span th:text="${loginTime}"></span></p>
         <h4>最新系统更新</h4>
         <ul class="record">
             <li class="box">
                 <ul>
-                    <li>xxxxxxx</li>
-                    <li>xxxxxxx</li>
+                    <li>完善修改联系人变更公司的自动搜索</li>
+                    <li>完善公司、联系人删除机制</li>
                     <li>xxxxxxx</li>
                     <li>xxxxxxx</li>
                 </ul>
@@ -45,7 +43,7 @@
     </main>
     <footer>
         <div class="cutline"></div>
-        <div>Copyright @ 2022 江苏久特教育科技股份有限公司 All Rights Reserved</div>
+        <div>版权信息</div>
     </footer>
     <script src="js/index.js"></script>
 </body>
