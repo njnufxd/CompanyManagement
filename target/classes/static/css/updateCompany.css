@@ -1,0 +1,147 @@
+main {
+  width: 1400px;
+  padding-left: 15px;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+main div.left {
+  width: 1000px;
+}
+main div.left div.title p {
+  font-size: 10px;
+  color: gray;
+}
+main div.left div.content {
+  font-family: KaiTi;
+}
+main div.left div.content ul li {
+  margin-bottom: 10px;
+}
+main div.left div.content ul li:nth-child(3) input {
+  width: 40px;
+}
+main div.left div.content ul li:nth-child(4) input {
+  width: 300px;
+}
+main div.left div.content ul li div.compile img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+main div.left div.content ul li div.compile input {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-left: 3px;
+  margin-right: 5px;
+}
+main div.left div.content ul li div.compile textarea {
+  width: 800px;
+  height: 150px;
+  resize: none;
+}
+main div.left div.content ul li .href {
+  font-size: 10px;
+  color: #369;
+  cursor: pointer;
+}
+main div.left div.content ul li span.choice,
+main div.left div.content ul li span.label {
+  font-size: 10px;
+  color: gray;
+}
+main div.left div.content ul li select {
+  width: 70px;
+  height: 20px;
+}
+main div.left div.content ul li textarea {
+  width: 600px;
+  height: 200px;
+  resize: none;
+}
+main div.left div.add ul li {
+  margin-bottom: 15px;
+}
+main div.left div.add ul li .gender {
+  width: 15px;
+}
+main div.left div.add ul li:nth-child(3) input {
+  width: 400px;
+}
+main div.left div.add ul li:nth-child(4) {
+  width: 100%;
+}
+main div.left div.add ul li:nth-child(4) input {
+  width: 100%;
+}
+main div.left div.contact {
+  width: 1000px;
+}
+main div.left div.contact::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+main div.left div.contact div {
+  height: 20px;
+}
+main div.left div.contact div .order {
+  float: right;
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 5px;
+}
+main div.left div.contact ul {
+  width: 100%;
+}
+main div.left div.contact ul li {
+  height: 30px;
+  line-height: 30px;
+  font-size: 10px;
+  border: 0.5px solid #add8e6;
+}
+main div.left div.contact ul li a:hover{
+  cursor:pointer;
+}
+main div.left div.pages {
+  float: right;
+  margin-top: 20px;
+}
+main div.left div.pages ul {
+  display: flex;
+}
+main div.left div.pages ul li:hover {
+  cursor: pointer;
+}
+main div.left div.pages ul .pre,
+main div.left div.pages ul .next {
+  border: 0.5px solid #add8e6;
+  height: 20px;
+  line-height: 20px;
+  color: #36c;
+  text-align: center;
+  width: 60px;
+}
+main div.right {
+  width: 120px;
+  height: 100px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  color: #369;
+  padding: 5px 7px;
+  font-size: 15px;
+  background: #d1eeee;
+  border-style: ridge;
+  border-width: 3px;
+}
+main div.right h4 {
+  margin: 0px;
+}
+main div.right ul li {
+  padding-left: 10px;
+  margin-top: 5px;
+}
+main div.right ul li:hover {
+  cursor: pointer;
+}

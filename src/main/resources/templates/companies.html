@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>单位列表</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/companies.css">
+</head>
+
+<body>
+<header>
+    <div class="top">
+        <ul>
+            <a href="/index"><li class="index">首页</li></a>
+            <a href="/companies"><li class="companies">单位</li></a>
+            <a href="/contacts"><li class="contacts">联系人</li></a>
+            <a href="/records"><li class="records">联系记录</li></a>
+            <a href="/users"><li class="users">用户管理</li></a>
+            <a href="/suppliers"><li class="suppliers">供应商</li></a>
+            <a href=""><li class="userSuppliers">用户供应商</li></a>
+            <a href=""><li class="userContacts">用户联系人</li></a>
+            <a href="/self"><li class="self">个人信息</li></a>
+            <li class="quit" th:text="'退出'+'('+${userName}+')'"></li>
+        </ul>
+    </div>
+</header>
+<div class="breadcrumbs">
+    <a href="/index">首页</a> >> <a href="/companies">单位</a></div>
+<main>
+    <div class="left">
+        <div class="title">
+            <h3>单位</h3>
+
+        </div>
+        <h5 class="advancedSearch">高级查找</h5>
+        <div class="option">
+            <div class="advance-search">
+                <ul>
+                    <li>
+                        地址
+                        <input type="text" class="address">
+                    </li>
+                    <li>
+                        <div><span>描述</span></div> <textarea name="" id="" cols="30" rows="10" class="description"></textarea>
+                    </li>
+                    <li>
+                        标签<input type="text" class="labels">
+                    </li>
+                    <li>
+                        省<input type="text" class="advanceProvince">
+                    </li>
+                    <li>
+                        市<input type="text" class="advanceCity">
+                    </li>
+                    <li>
+                        区<input type="text" class="advanceArea">
+                    </li>
+                    <li>
+                        规模<input type="number" class="advanceSize">
+                    </li>
+                    <li>
+                        类型<input type="text" class="advanceCategory">
+                    </li>
+                    <li><input type="button" value="查找" class="advance_search"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="order">
+                <span> 第<span class="start"></span>-<span class="end"></span> 条 共<span class="totalCount"></span> 条</span>
+            </div>
+            <ul class="name">
+                <li>单位名称<div><input type="text" class="companyName"></div>
+                </li>
+                <li>省<div><input type="text" class="province"></div>
+                </li>
+                <li>市<div><input type="text" class="city"></div>
+                </li>
+                <li>区/县<div><input type="text" class="area"></div>
+                </li>
+                <li>规模<div><input type="text" class="size"></div>
+                </li>
+                <li>类型<div><input type="text" class="category"></div>
+                </li>
+                <li>操作<div><input type="button" value="查找" class="search"></div>
+                </li>
+            </ul>
+            <ul class="box">
+
+            </ul>
+        </div>
+        <div class="pages">
+            <ul>
+                <li class="pre">&lt前页 </li>
+                <li class="next">后页&gt</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="right">
+
+        <h4>操作</h4>
+        <ul>
+            <li class="addCompany">添加单位</li>
+        </ul>
+    </div>
+</main>
+<footer>
+    <div class="cutline"></div>
+    <div>版权信息</div>
+</footer>
+<script src="js/index.js"></script>
+<script src="js/companies.js"></script>
+</body>
+
+</html>

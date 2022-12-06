@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+    <meta charset="UTF-8">
+    <title>添加单位</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/addCompany.css">
+</head>
+
+<body>
+<header>
+    <div class="top">
+        <ul>
+            <a href="/index"><li class="index">首页</li></a>
+            <a href="/companies"><li class="companies">单位</li></a>
+            <a href="/contacts"><li class="contacts">联系人</li></a>
+            <a href="/records"><li class="records">联系记录</li></a>
+            <a href="/users"><li class="users">用户管理</li></a>
+            <a href="/suppliers"><li class="suppliers">供应商</li></a>
+            <a href=""><li class="userSuppliers">用户供应商</li></a>
+            <a href=""><li class="userContacts">用户联系人</li></a>
+            <a href="/self"><li class="self">个人信息</li></a>
+            <li class="quit" th:text="'退出'+'('+${userName}+')'"></li>
+        </ul>
+    </div>
+    <div class="breadcrumbs">
+        <a href="/index">首页</a> >> <a href="/companies">单位</a> >> 新建
+    </div>
+</header>
+<main>
+
+    <div class="left">
+
+        <div class="title">
+            <h3>添加单位</h3>
+            <h6><i>带<span class="star">*</span>必填</i></h6>
+        </div>
+        <div class="content">
+            <ul>
+                <li>
+                    单位名称<span class="star">*</span>        <input type="text" class="companyName">
+                </li>
+                <li>
+                    地址<input type="text" class="address">
+                </li>
+                <li>
+                    电话<input type="tel" class="tel">
+                </li>
+                <li class="web">
+                    网址<input type="text" class="webAddress"><i><strong><a href="" class="href">打开网站</a></strong></i>
+                </li>
+                <li>
+
+                </li>
+                <li>
+                    <select name="province" class="province" onchange="chooseProvince()" ></select>
+                    <select name="city" class="city" onchange="chooseCity()"></select>
+                    <select name="area" class="area"></select>
+                    规模<input type="number" class="size"> 星级 <input type="number" class="star_level"> 类型<input type="text" class="category"> <span class="note">J-集成商;Y-用户;C-厂家;F-厂家分支机构;K-教育厂 </span>
+                </li>
+                <li>
+                    标签<input type="text" class="labels">
+                </li>
+                <li>
+                    描述
+                </li>
+                <li>
+                    <div class="compile">
+                                <textarea
+                                        name="sign" rows="5" cols="30" class="description"></textarea>
+                    </div>
+                </li>
+                <li>
+                    <input type="button" value="新建" class="submit">
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <div class="right">
+
+        <h4>操作</h4>
+        <ul>
+            <li class="companyList">
+                列表
+            </li>
+        </ul>
+    </div>
+
+</main>
+<footer>
+    <div class="cutline"></div>
+    <div>Copyright @ 2022 江苏久特教育科技股份有限公司 All Rights Reserved</div>
+</footer>
+<script src="js/index.js"></script>
+<script src="js/addCompany.js"></script>
+</body>
+
+</html>

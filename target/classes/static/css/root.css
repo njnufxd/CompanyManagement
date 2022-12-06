@@ -1,0 +1,103 @@
+html {
+  margin: 0px;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+a {
+  color: #36c;
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+header div.top {
+  width: 1600px;
+  background: linear-gradient(to top, #336699, #3366cc, #336699);
+}
+header div.top ul {
+  color: #fff;
+  display: flex;
+  padding-left: 24px;
+  height: 40px;
+  align-items: center;
+  box-sizing: border-box;
+}
+header div.top ul a {
+  color: #fff;
+}
+header div.top ul li {
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  margin-right: 18px;
+  cursor: pointer;
+}
+header div.top ul li:hover {
+  background-color: #aaa8a8;
+}
+header div.top ul .index {
+  width: 50px;
+  background: #fff;
+  color: #369;
+}
+header div.top ul .companies,
+header div.top ul .login {
+  width: 50px;
+}
+header div.top ul .contacts,
+header div.top ul .suppliers {
+  width: 70px;
+}
+header div.top ul .records,
+header div.top ul .users,
+header div.top ul .self {
+  width: 90px;
+}
+header div.top ul .userSuppliers,
+header div.top ul .userContacts {
+  width: 110px;
+}
+.breadcrumbs {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.breadcrumbs a {
+  color: #369;
+}
+footer {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 1600px;
+  font-size: 10px;
+}
+footer div.cutline {
+  height: 1px;
+  width: 1570px;
+  background-color: #369;
+}
+.error{
+    color:red;
+}

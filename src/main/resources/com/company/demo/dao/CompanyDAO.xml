@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.demo.dao.CompanyDAO">
+
+
+    <resultMap id="companyResultMap" type="com.company.demo.dataobject.CompanyDO">
+        <id column="id" property="id"/>
+        <result column="company_name" property="companyName"/>
+        <result column="address" property="address"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="area" property="area"/>
+        <result column="tel" property="tel"/>
+        <result column="web_address" property="webAddress"/>
+        <result column="star_level" property="starLevel"/>
+        <result column="category" property="category"/>
+        <result column="labels" property="labels"/>
+        <result column="size" property="size"/>
+        <result column="description" property="description"/>
+        <result column="gmt_created" property="gmtCreated"/>
+        <result column="gmt_modified" property="gmtModified"/>
+    </resultMap>
+    <insert id="add" parameterType="com.company.demo.dataobject.CompanyDO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO company (id,company_name, address,province,city,area,tel,web_address,star_level,category,labels,size,description,gmt_created,gmt_modified)
+        VALUES(#{id},#{companyName},#{address},#{province},#{city},#{area},#{tel},#{webAddress},#{starLevel},#{category},#{labels},#{size},#{description},now(),now())
+    </insert>
+    <select id="findAll" resultMap="companyResultMap">
+        select * from company
+    </select>
+    <select id="query" parameterType="com.company.demo.dataobject.CompanyDO" resultMap="companyResultMap">
+        select * from company
+        <where>
+            <if test="companyName != null ">
+                company_name like CONCAT('%',#{companyName},'%')
+            </if>
+            <if test="address != null ">
+                and address like CONCAT('%',#{address},'%')
+            </if>
+            <if test="description != null ">
+                and description like CONCAT('%',#{description},'%')
+            </if>
+            <if test="labels != null ">
+                and labels like CONCAT('%',#{labels},'%')
+            </if>
+            <if test="province != null">
+                and province like CONCAT('%',#{province},'%')
+            </if>
+            <if test="city != null">
+                and city like CONCAT('%',#{city},'%')
+            </if>
+            <if test="area != null">
+                and area like CONCAT('%',#{area},'%')
+            </if>
+            <if test="size != null">
+                and size = #{size}
+            </if>
+            <if test="category != null">
+                and category like CONCAT('%',#{category},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="findByIds" resultMap="companyResultMap">
+        select * from company
+        <where>
+            id in
+            <foreach item="item" index="index" collection="ids"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="findByCompanyName" resultMap="companyResultMap">
+        select * from company where company_name=#{companyName} limit 1
+    </select>
+
+
+    <update id="update" parameterType="com.company.demo.dataobject.CompanyDO">
+        update company
+        <set>
+            <if test="companyName != null">
+                company_name=#{companyName},
+            </if>
+            <if test="address != null">
+                address=#{address},
+            </if>
+            <if test="tel != null">
+                tel=#{tel},
+            </if>
+            <if test="webAddress != null">
+                web_address=#{webAddress},
+            </if>
+            <if test="province != null">
+                province=#{province},
+            </if>
+            <if test="city != null">
+                city=#{city},
+            </if>
+            <if test="area != null">
+                area=#{area},
+            </if>
+            <if test="size != null">
+                size=#{size},
+            </if>
+            <if test="starLevel != null">
+                star_level=#{starLevel},
+            </if>
+            <if test="category != null">
+                category=#{category},
+            </if>
+            <if test="labels != null">
+                labels=#{labels},
+            </if>
+            <if test="description != null">
+                description=#{description},
+            </if>
+            gmt_modified=now()
+        </set>
+        <where>
+            <if test="id !='' and id!=null">
+                id = #{id,jdbcType=VARCHAR};
+            </if>
+        </where>
+    </update>
+    <delete id="delete">
+        delete from company where id=#{id}
+    </delete>
+    <select id="search" resultMap="companyResultMap">
+        select * from company
+        <where>
+            <if test="name != null">
+                company_name like CONCAT('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+
+
+</mapper>

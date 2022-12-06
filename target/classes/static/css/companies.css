@@ -1,0 +1,189 @@
+main {
+  padding-left: 15px;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  width: 1600px;
+}
+main div.left {
+  width: 1250px;
+  padding-left: 15px;
+  align-items: center;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+main div.left div.title p {
+  font-size: 10px;
+  color: gray;
+}
+main div.left div.content {
+  width: 1130px;
+}
+main div.left div.content div.order {
+  float: right;
+}
+main div.left div.content div.order span {
+  color: gray;
+}
+main div.left div.content ul.name {
+  display: flex;
+  text-align: center;
+  width: 100%;
+}
+main div.left div.content ul.name li {
+  background: linear-gradient(to top, #336699, #3366cc, #336699);
+  color: #fff;
+  margin-right: 1px;
+}
+main div.left div.content ul.name li:nth-child(1) {
+  width: 400px;
+}
+main div.left div.content ul.name li:nth-child(2),
+main div.left div.content ul.name li:nth-child(3) {
+  width: 150px;
+}
+main div.left div.content ul.name li:nth-child(4) {
+  width: 120px;
+}
+main div.left div.content ul.name li:nth-child(5),
+main div.left div.content ul.name li:nth-child(6),
+main div.left div.content ul.name li:nth-child(7),
+main div.left div.content ul.name li:nth-child(8),
+main div.left div.content ul.name li:nth-child(9) {
+  width: 80px;
+}
+main div.left div.content ul.name li:last-child {
+  width: 150px;
+}
+main div.left div.content ul.name li input {
+  padding-left: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+main div.left div.content ul.box li {
+  margin-top: 0.5px;
+}
+main div.left div.content ul.box li ul {
+  display: flex;
+}
+main div.left div.content ul.box li ul li {
+  background: #add8e6;
+  color: #000;
+  text-align: center;
+  margin-right: 1px;
+}
+main div.left div.content ul.box li ul li:nth-child(1) {
+  width: 400px;
+}
+main div.left div.content ul.box li ul li:nth-child(2),
+main div.left div.content ul.box li ul li:nth-child(3) {
+  width: 150px;
+}
+main div.left div.content ul.box li ul li:nth-child(4) {
+  width: 120px;
+}
+main div.left div.content ul.box li ul li:nth-child(5),
+main div.left div.content ul.box li ul li:nth-child(6),
+main div.left div.content ul.box li ul li:nth-child(7),
+main div.left div.content ul.box li ul li:nth-child(8),
+main div.left div.content ul.box li ul li:nth-child(9) {
+  width: 80px;
+}
+main div.left div.content ul.box li ul li:last-child {
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main div.left div.content ul.box li ul li:last-child a:hover{
+  cursor:pointer;
+}
+main div.left div.content ul.box li ul li:last-child img {
+  display: inline-block;
+  width: 20px;
+  height: 21px;
+}
+main div.left div.content ul.box li ul li input {
+  padding-left: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+main div.left h5 {
+  width: 80px;
+  color: #369;
+  cursor: pointer;
+}
+main div.left div.option {
+  display: none;
+  margin-bottom: 20px;
+}
+main div.left div.option div.advance-search {
+  font-family: KaiTi;
+  box-sizing: border-box;
+  width: 1000px;
+  background: #d3d3d3;
+  display: flex;
+  align-items: center;
+}
+main div.left div.option div.advance-search ul {
+  margin: 25px 60px;
+}
+main div.left div.option div.advance-search ul li {
+  display: flex;
+  margin-bottom: 10px;
+}
+main div.left div.option div.advance-search ul li input {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+main div.left div.pages {
+  float: right;
+  margin-top: 20px;
+  margin-right: 100px;
+}
+main div.left div.pages ul {
+  display: flex;
+}
+main div.left div.pages ul li:hover {
+  cursor: pointer;
+}
+main div.left div.pages ul .pre,
+main div.left div.pages ul .next {
+  border: 0.5px solid #add8e6;
+  height: 20px;
+  line-height: 20px;
+  color: #36c;
+  text-align: center;
+  width: 60px;
+}
+main div.right {
+  width: 120px;
+  height: 60px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-left: 50px;
+  color: #369;
+  padding: 5px 7px;
+  font-size: 15px;
+  background: #e0eeee;
+  border-style: ridge;
+  border-width: 3px;
+}
+main div.right h4 {
+  margin: 0px;
+}
+main div.right ul li {
+  padding-left: 10px;
+  margin-top: 5px;
+}
+main div.right ul li:hover {
+  cursor: pointer;
+}
+

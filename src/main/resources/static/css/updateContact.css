@@ -1,0 +1,175 @@
+main {
+  margin-left: 15px;
+  margin-top: 30px;
+}
+main div.company {
+  width: 1500px;
+}
+main div.company ul {
+  display: flex;
+}
+main div.company ul li {
+  margin: 1px;
+}
+main div.company ul:first-child li:nth-child(1),
+main div.company ul:first-child li:nth-child(2),
+main div.company ul:first-child li:nth-child(3),
+main div.company ul:first-child li:nth-child(5) {
+  width: 370px;
+}
+main div.company ul:first-child li:nth-child(4) {
+  width: 70px;
+}
+main div.company ul:first-child li div:first-child {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #f7f7f7;
+  margin-bottom: 2px;
+}
+main div.company ul:first-child li div:last-child {
+  height: 30px;
+  line-height: 30px;
+  background: azure;
+}
+main div.company ul:nth-child(2) li {
+  height: 300px;
+  line-height: 300px;
+  text-align: center;
+  background: azure;
+}
+main div.company ul:nth-child(2) li:first-child {
+  width: 300px;
+  margin-right: 2px;
+}
+main div.company ul:nth-child(2) li:last-child {
+  width: 1498px;
+  overflow: auto;
+}
+main div.company ul:nth-child(3) li {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background: #f7f7f7;
+}
+main div.company ul:nth-child(3) li:first-child {
+  width: 300px;
+  margin-right: 2px;
+}
+main div.company ul:nth-child(3) li:last-child {
+  width: 1498px;
+}
+main div.addInfo h4 {
+  font-family: SimHei;
+  margin-bottom: 5px;
+}
+main div.addInfo .action a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 10px;
+  margin-bottom: 10px;
+  font-family: STSong;
+  color: #36c;
+}
+main div.addInfo ul {
+  width: 1400px;
+}
+main div.addInfo ul li {
+  margin-bottom: 10px;
+}
+main div.addInfo ul li:first-child {
+  display: flex;
+}
+main div.addInfo ul li:first-child span {
+  font-size: 10px;
+  color: gray;
+}
+main div.addInfo ul li:nth-child(2) input:nth-child(2) {
+  width: 20px;
+}
+main div.addInfo ul li:nth-child(6) input {
+  width: 400px;
+}
+main div.addInfo ul li input {
+  margin-right: 10px;
+}
+main div.addInfo .add div {
+  margin-bottom: 10px;
+}
+main div.addInfo .add textarea {
+  resize: none;
+  width: 600px;
+}
+main div.addInfo .add select {
+  width: 70px;
+  height: 20px;
+  color: #7a7a7a;
+}
+main div.addInfo .add input {
+  width: 40px;
+}
+main div.addInfo div.recordList {
+  width: 80%;
+}
+main div.addInfo div.recordList::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+main div.addInfo div.recordList div {
+  height: 20px;
+}
+main div.addInfo div.recordList div .order {
+  float: right;
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 5px;
+}
+main div.addInfo div.recordList .record-list {
+  width: 100%;
+  height: auto;
+}
+main div.addInfo div.recordList .record-list .record {
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  border: 0.5px solid #add8e6;
+  border-radius: 5px;
+  font-size: 10px;
+}
+main div.addInfo div.recordList .record-list .record ul {
+  width: 100%;
+}
+main div.addInfo div.recordList .record-list .record ul li div {
+  width: 30px;
+  height:auto;
+}
+main div.addInfo div.recordList .record-list .record ul li div a:hover{
+  cursor:pointer;
+}
+main div.addInfo div.recordList .record-list .record ul li .recordContent {
+  width: 100%;
+  height: auto;
+  word-wrap: break-word;
+}
+main div.addInfo div.recordList div.pages {
+  height: auto;
+  width: 100%;
+}
+main div.addInfo div.recordList div.pages ul {
+  float: right;
+  margin-top: 20px;
+  display: flex;
+  width: auto;
+}
+main div.addInfo div.recordList div.pages ul li:hover {
+  cursor: pointer;
+}
+main div.addInfo div.recordList div.pages ul .pre,
+main div.addInfo div.recordList div.pages ul .next {
+  border: 0.5px solid #add8e6;
+  line-height: 20px;
+  color: #36c;
+  text-align: center;
+  width: 60px;
+}

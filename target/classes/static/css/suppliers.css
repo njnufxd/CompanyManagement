@@ -1,0 +1,149 @@
+main {
+  width: 1600px;
+  font-family: SimSun;
+  padding-left: 15px;
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+main div.left {
+  width: 1100px;
+  box-sizing: border-box;
+}
+main div.left h5 {
+  width: 80px;
+  color: #369;
+  cursor: pointer;
+}
+main div.left div.option {
+  display: block;
+}
+main div.left div.option div.advance-search {
+  font-family: KaiTi;
+  box-sizing: border-box;
+  width: 1000px;
+  height: 250px;
+  background: #d3d3d3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main div.left div.option div.advance-search li {
+  margin-bottom: 10px;
+}
+main div.left div.option div.advance-search li input {
+  display: inline-block;
+  margin-right: 10px;
+}
+main div.left div.content {
+  width: 100%;
+}
+main div.left div.content div.order {
+  float: right;
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 5px;
+}
+main div.left div.content ul.name {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+main div.left div.content ul.name li {
+  text-align: center;
+  box-sizing: border-box;
+  background: #369;
+  margin-right: 1px;
+  color: #fff;
+}
+main div.left div.content ul.name li:first-child,
+main div.left div.content ul.name li:nth-child(2) {
+  width: 500px;
+}
+main div.left div.content ul.name li:last-child {
+  width: 100px;
+}
+main div.left div.content ul.name li input {
+  width: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+}
+main div.left div.content ul.box li {
+  margin-top: 1px;
+}
+main div.left div.content ul.box li ul {
+  display: flex;
+}
+main div.left div.content ul.box li ul li {
+  background: #add8e6;
+  color: #000;
+  margin-right: 1px;
+}
+main div.left div.content ul.box li ul li:first-child,
+main div.left div.content ul.box li ul li:nth-child(2) {
+  width: 500px;
+}
+main div.left div.content ul.box li ul li:last-child {
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main div.left div.content ul.box li ul li:last-child a:hover{
+  cursor:pointer;
+}
+main div.left div.content ul.box li ul li:last-child img {
+  display: inline-block;
+  width: 20px;
+  height: 21px;
+}
+main div.left div.content ul.box li ul li input {
+  padding-left: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+main div.left div.content div.pages {
+  float: right;
+  margin-top: 20px;
+}
+main div.left div.content div.pages ul {
+  display: flex;
+}
+main div.left div.content div.pages ul li:hover {
+  cursor: pointer;
+}
+main div.left div.content div.pages ul .pre,
+main div.left div.content div.pages ul .next {
+  border: 0.5px solid #add8e6;
+  height: 20px;
+  line-height: 20px;
+  color: #36c;
+  text-align: center;
+  width: 60px;
+}
+main div.right {
+  margin-left: 200px;
+  width: 120px;
+  height: 80px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  color: #369;
+  padding: 5px 7px;
+  font-size: 15px;
+  background: #e0eeee;
+  border-style: ridge;
+  border-width: 3px;
+}
+main div.right h4 {
+  margin: 0px;
+}
+main div.right ul li {
+  padding-left: 10px;
+  margin-top: 5px;
+}
+main div.right ul li:hover {
+  cursor: pointer;
+}

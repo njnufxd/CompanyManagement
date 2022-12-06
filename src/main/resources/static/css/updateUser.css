@@ -1,0 +1,15 @@
+main {
+  padding-left: 15px;
+  align-items: center;
+  box-sizing: border-box;
+}
+main .title {
+  font-family: SimHei;
+  margin-bottom: 10px;
+}
+main .content {
+  font-family: KaiTi;
+}
+main .content li {
+  margin-bottom: 15px;
+}

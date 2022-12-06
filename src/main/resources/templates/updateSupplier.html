@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+    <meta charset="UTF-8">
+    <title>供应商详情</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/updateSupplier.css">
+</head>
+
+<body>
+<header>
+    <div class="top">
+        <ul>
+            <a href="/index"><li class="index">首页</li></a>
+            <a href="/companies"><li class="companies">单位</li></a>
+            <a href="/contacts"><li class="contacts">联系人</li></a>
+            <a href="/records"><li class="records">联系记录</li></a>
+            <a href="/users"><li class="users">用户管理</li></a>
+            <a href="/suppliers"><li class="suppliers">供应商</li></a>
+            <a href=""><li class="userSuppliers">用户供应商</li></a>
+            <a href=""><li class="userContacts">用户联系人</li></a>
+            <a href="/self"><li class="self">个人信息</li></a>
+            <li class="quit" th:text="'退出'+'('+${userName}+')'"></li>
+        </ul>
+    </div>
+    <div class="breadcrumbs">
+        <a href="/index">首页</a>>><a href="/suppliers">供应商</a>>><a href="" class="supplierName">test</a> >> 修改
+        </div>
+</header>
+<main>
+    <div class="content">
+        <h4>供应商</h4>
+        <div class="supplier">
+            <ul>
+                <li>
+                    <div>供应商ID：</div><div class="supplierId" th:text="${supplierId}">1</div>
+                </li>
+                <li>
+                    <div>名字：</div><input class="supplierName">
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <div> 描述</div>
+                    <textarea name="" id="" cols="30" rows="10" class="description"></textarea>
+                </li>
+            </ul>
+            <ul>
+                <li><div>创建时间:</div><div class="createdTime"></div> </li>
+                <li><div>修改时间:</div><div class="modifiedTime"></div></li>
+            </ul>
+        </div>
+        <button class="submit">修改</button>
+        <h5>相关联系人</h5>
+        <div class="contact">
+            <div>
+                <div class="order">
+                        <span> 第<span class="start"></span>-<span class="end"></span> 条 共<span
+                                class="totalCount"></span>
+                            条</span>
+                </div>
+            </div>
+            <ul class="contactList">
+            </ul>
+        </div>
+        <div class="pages">
+            <ul>
+                <li class="pre">&lt前页 </li>
+                <li class="next">后页&gt</li>
+            </ul>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="cutline"></div>
+    <div>版权信息</div>
+</footer>
+<script src="css/updateSupplier.js"></script>
+</body>
+
+</html>

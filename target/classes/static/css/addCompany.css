@@ -1,0 +1,79 @@
+main {
+  width: 1600px;
+  padding-left: 15px;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+main div.left {
+  width: 1000px;
+}
+main div.left h6 {
+  font-size: 10px;
+  color: gray;
+}
+main div.left li {
+  margin-bottom: 15px;
+  margin-left: 0px;
+  font-family: KaiTi;
+}
+main div.left li select {
+  width: 70px;
+  height: 25px;
+}
+main div.left li:nth-child(1) input,
+main div.left li:nth-child(2) input {
+  width: 500px;
+}
+main div.left li span.note {
+  font-size: 10px;
+  color: gray;
+}
+main div.left li span.note input {
+  width: 15px;
+  height: 15px;
+  margin-left: 0px;
+}
+main div.left li:nth-child(4) input {
+  width: 300px;
+}
+main div.left li:nth-child(4) a {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 13px;
+  color: #5f9ea0;
+}
+main div.left li:nth-child(6) input {
+  width: 30px;
+}
+main div.left li:nth-child(9) div.compile textarea {
+  width: 800px;
+  height: 150px;
+  resize: none;
+}
+main div.right {
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  color: #369;
+  padding: 5px 7px;
+  font-size: 15px;
+  background: #e0eeee;
+  border-style: ridge;
+  border-width: 3px;
+}
+main div.right h4 {
+  margin: 0px;
+}
+main div.right ul li {
+  padding-left: 4px;
+  margin-top: 5px;
+}
+main div.right ul li:hover {
+  cursor: pointer;
+}
+.star {
+  color: red;
+}

@@ -1,0 +1,133 @@
+main {
+  width: 1500px;
+  padding-left: 15px;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+}
+main div.left {
+  width: 1235px;
+}
+main div.left div.content {
+  width: 1200px;
+}
+main div.left div.content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+main div.left div.content div.order {
+  float: right;
+  font-size: 15px;
+  color: gray;
+  margin-bottom: 5px;
+}
+main div.left div.content ul.name {
+  text-align: center;
+  display: flex;
+  width: 100%;
+}
+main div.left div.content ul.name li {
+  background: #369;
+  color: #fff;
+  box-sizing: border-box;
+  width: 142px;
+  margin-right: 1px;
+  justify-content: center;
+}
+main div.left div.content ul.name li input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+main div.left div.content ul.name li:nth-child(1),
+main div.left div.content ul.name li:nth-child(3),
+main div.left div.content ul.name li:nth-child(4),
+main div.left div.content ul.name li:nth-child(5) {
+  width: 200px;
+}
+main div.left div.content ul.name li:nth-child(2),
+main div.left div.content ul.name li:nth-child(6) {
+  width: 142px;
+}
+main div.left div.content ul.box li {
+  margin-top: 1px;
+}
+main div.left div.content ul.box li ul {
+  display: flex;
+}
+main div.left div.content ul.box li ul li {
+  color: #000;
+  margin-right: 1px;
+}
+main div.left div.content ul.box li ul li:nth-child(1),
+main div.left div.content ul.box li ul li:nth-child(3),
+main div.left div.content ul.box li ul li:nth-child(4),
+main div.left div.content ul.box li ul li:nth-child(5) {
+  width: 200px;
+}
+main div.left div.content ul.box li ul li:nth-child(2),
+main div.left div.content ul.box li ul li:nth-child(6) {
+  width: 142px;
+}
+main div.left div.content ul.box li ul li:last-child {
+  width: 142px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+main div.left div.content ul.box li ul li:last-child a:hover {
+  cursor:pointer;
+}
+main div.left div.content ul.box li ul li:last-child img {
+  display: inline-block;
+  width: 20px;
+  height: 21px;
+}
+main div.left div.content ul.box li ul li input {
+  padding-left: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+main div.left div.content div.pages {
+  float: right;
+  margin-top: 20px;
+}
+main div.left div.content div.pages ul {
+  display: flex;
+}
+main div.left div.content div.pages ul .pre,
+main div.left div.content div.pages ul .next {
+  border: 0.5px solid #add8e6;
+  height: 20px;
+  line-height: 20px;
+  color: #36c;
+  text-align: center;
+  width: 60px;
+}
+main div.left div.content div.pages ul .pre:hover,
+main div.left div.content div.pages ul .next:hover {
+  cursor: pointer;
+}
+main div.right {
+  width: 100px;
+  height: 80px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  color: #369;
+  padding: 5px 7px;
+  font-size: 15px;
+  background: #e0eeee;
+  border-style: ridge;
+  border-width: 3px;
+}
+main div.right h4 {
+  margin: 0px;
+}
+main div.right ul li {
+  padding-left: 4px;
+  margin-top: 5px;
+}

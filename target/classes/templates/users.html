@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>用户</title>
+  <link rel="stylesheet" href="css/root.css">
+  <link rel="stylesheet" href="css/users.css">
+</head>
+
+<body>
+<header>
+  <div class="top">
+    <ul>
+      <a href="/index"><li class="index">首页</li></a>
+      <a href="/companies"><li class="companies">单位</li></a>
+      <a href="/contacts"><li class="contacts">联系人</li></a>
+      <a href="/records"><li class="records">联系记录</li></a>
+      <a href="/users"><li class="users">用户管理</li></a>
+      <a href="/suppliers"><li class="suppliers">供应商</li></a>
+      <a href=""><li class="userSuppliers">用户供应商</li></a>
+      <a href=""><li class="userContacts">用户联系人</li></a>
+      <a href="/self"><li class="self">个人信息</li></a>
+      <li class="quit" th:text="'退出'+'('+${userName}+')'"></li>
+    </ul>
+  </div>
+  <div class="breadcrumbs">
+    <a href="/idnex">首页</a> » <a href="/users">用户</a>
+  </div>
+</header>
+<main>
+
+  <div class="left">
+
+    <div class="title">
+      <p>用户</p>
+    </div>
+    <div class="content">
+      <div class="order">
+        <span> 第<span class="start">1</span>-<span class="end">10</span> 条 共<span class="totalCount">10</span> 条</span>
+      </div>
+      <ul class="name">
+        <li>ID<input type="number" class="id">
+        </li>
+        <li>用户名<input type="text" class="userName">
+        </li>
+        <li>Email<input type="email" class="email"></li>
+        <li>手机<input type="tel" class="phone"></li>
+        <li>QQ号码<input type="tel" class="qq"></li>
+        <li>电话 <input type="text" class="tel"></li>
+        <li>操作<input class="search" type="button" value="查找"></li>
+      </ul>
+
+      <ul class="box">
+
+      </ul>
+
+      <div class="pages">
+        <ul>
+          <li class="pre">&lt前页 </li>
+          <li class="next">后页&gt</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="right">
+
+    <h4>操作</h4>
+    <ul>
+      <li>
+        <a href="/addUser">新建用户</a>
+      </li>
+    </ul>
+  </div>
+</main>
+<footer>
+  <div class="cutline"></div>
+  <div>Copyright @ 2022 江苏久特教育科技股份有限公司 All Rights Reserved</div>
+</footer>
+<script src="js/index.js"></script>
+<script src="js/users.js"></script>
+</body>
+
+</html>

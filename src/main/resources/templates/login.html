@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+<header>
+    <div class="top">
+        <ul>
+            <a href="/index"><li class="index">首页</li></a>
+            <a href="/login"><li class="login">登录</li></a>
+        </ul>
+    </div>
+</header>
+<div class="breadcrumbs">
+    <a href="/index">首页</a>>><a href="/login">登录</a>
+</div>
+<main>
+    <div id="content">
+
+        <h1>登录</h1>
+
+        <p></p>
+
+        <div class="form">
+            <p class="note">带 <span class="required">*</span> 必填.</p>
+
+            <div class="row">
+                <label class="label">用户名 <span class="required">*</span></label>
+                <input id="LoginForm_username" type="text">
+            </div>
+
+            <div class="row">
+                <label class="label">密码 <span class="required">*</span></label>
+                <input id="LoginForm_pwd" type="password">
+                <p class="error">
+                </p>
+            </div>
+
+            <div class="row">
+                <button class="submit">登录</button>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="cutline"></div>
+    <div>版权信息</div>
+</footer>
+
+</body>
+<script src="js/login.js"></script>
+</html>

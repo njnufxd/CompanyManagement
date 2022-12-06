@@ -1,0 +1,14 @@
+.required {
+  color: red;
+}
+.row {
+  margin: 5px 0;
+}
+.row .label {
+  font-weight: bold;
+  font-size: 0.9em;
+  color: #555;
+}
+.row input {
+  padding: 1px 2px;
+}

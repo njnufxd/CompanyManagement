@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.demo.dao.ContactDAO">
+
+
+    <resultMap id="contactResultMap" type="com.company.demo.dataobject.ContactDO">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="company_id" property="companyId"/>
+        <result column="supplier_id" property="supplierId"/>
+        <result column="gender" property="gender"/>
+        <result column="position" property="position"/>
+        <result column="tel" property="tel"/>
+        <result column="email" property="email"/>
+        <result column="phone" property="phone"/>
+        <result column="second_phone" property="secondPhone"/>
+        <result column="qq" property="qq"/>
+        <result column="responsibility" property="responsibility"/>
+        <result column="notes" property="notes"/>
+        <result column="gmt_created" property="gmtCreated"/>
+        <result column="gmt_modified" property="gmtModified"/>
+    </resultMap>
+    <insert id="add" parameterType="com.company.demo.dataobject.ContactDO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO contact (id,name, company_id,supplier_id,gender,position,tel,email,phone,second_phone,qq,responsibility,notes,gmt_created,gmt_modified)
+        VALUES(#{id},#{name},#{companyId},#{supplierId},#{gender},#{position},#{tel},#{email},#{phone},#{secondPhone},#{qq},#{responsibility},#{notes},now(),now())
+    </insert>
+    <select id="findAll" resultMap="contactResultMap">
+        select * from contact
+    </select>
+    <select id="advanceQuery" resultMap="contactResultMap">
+        select * from contact
+        <where>
+            <if test="contact.name != null ">
+                name like CONCAT('%',#{contact.name},'%')
+            </if>
+            <if test="contact.gender != null">
+                and gender like CONCAT('%',#{contact.gender},'%')
+            </if>
+            <if test="contact.position != null">
+                and position like CONCAT('%',#{contact.position},'%')
+            </if>
+            <if test="contact.phone != null">
+                and phone like CONCAT('%',#{contact.phone},'%')
+            </if>
+            <if test="contact.secondPhone != null">
+                and second_phone like CONCAT('%',#{contact.secondPhone},'%')
+            </if>
+            <if test="contact.tel != null">
+                and tel like CONCAT('%',#{contact.tel},'%')
+            </if>
+            <if test="contact.email != null">
+                and email like CONCAT('%',#{contact.email},'%')
+            </if>
+            <if test="contact.qq != null">
+                and qq like CONCAT('%',#{contact.qq},'%')
+            </if>
+            <if test="contact.responsibility != null">
+                and responsibility like CONCAT('%',#{contact.responsibility},'%')
+            </if>
+            <if test="contact.notes != null">
+                and notes like CONCAT('%',#{contact.notes},'%')
+            </if>
+            <if test="companyIds != null">
+                and company_id in
+                <foreach item="item" index="index" collection="companyIds"
+                         open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </select>
+    <select id="normalQuery" resultMap="contactResultMap">
+        select * from contact
+        <where>
+            <if test="name != null ">
+                name like CONCAT('%',#{name},'%')
+            </if>
+            <if test="gender != null">
+                and gender like CONCAT('%',#{gender},'%')
+            </if>
+            <if test="position != null">
+                and position like CONCAT('%',#{position},'%')
+            </if>
+            <if test="phone != null">
+                and phone like CONCAT('%',#{phone},'%')
+            </if>
+            <if test="secondPhone != null">
+                and second_phone like CONCAT('%',#{secondPhone},'%')
+            </if>
+            <if test="tel != null">
+                and tel like CONCAT('%',#{tel},'%')
+            </if>
+            <if test="email != null">
+                and email like CONCAT('%',#{email},'%')
+            </if>
+            <if test="qq != null">
+                and qq like CONCAT('%',#{qq},'%')
+            </if>
+            <if test="responsibility != null">
+                and responsibility like CONCAT('%',#{responsibility},'%')
+            </if>
+            <if test="notes != null">
+                and notes like CONCAT('%',#{notes},'%')
+            </if>
+        </where>
+    </select>
+    <select id="findByCompanyId" resultMap="contactResultMap">
+        select * from contact where company_id = #{id}
+    </select>
+
+
+    <select id="findByIds" resultMap="contactResultMap">
+        select * from contact
+        <where>
+            id in
+            <foreach item="item" index="index" collection="ids"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+
+    <update id="update" parameterType="com.company.demo.dataobject.ContactDO">
+        update contact
+        <set>
+            <if test="name != null ">
+                name = #{name},
+            </if>
+            <if test="gender != null">
+                gender = #{gender},
+            </if>
+            <if test="position != null">
+                position = #{position},
+            </if>
+            <if test="phone != null">
+                phone = #{phone},
+            </if>
+            <if test="secondPhone != null">
+                second_phone = #{secondPhone},
+            </if>
+            <if test="tel != null">
+                tel = #{tel},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="qq != null">
+                qq = #{qq},
+            </if>
+            <if test="responsibility != null">
+                responsibility = #{responsibility},
+            </if>
+            <if test="notes != null">
+                notes = #{notes},
+            </if>
+            <if test="companyId!=null">
+                company_id=#{companyId},
+            </if>
+            <if test="supplierId!=null">
+                supplier_id=#{supplierId},
+            </if>
+            gmt_modified = now()
+        </set>
+        where id=#{id}
+    </update>
+    <delete id="delete">
+        delete from contact where id=#{id}
+    </delete>
+    <delete id="batchDel">
+        delete from contact
+        <where>
+            id in
+            <foreach item="item" index="index" collection="ids"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </delete>
+    <delete id="delByCompanyId">
+        delete from contact where company_id=#{id}
+    </delete>
+    <select id="findBySupplierId" resultMap="contactResultMap">
+        select * from contact where supplier_id = #{id}
+    </select>
+    <update id="updateSupplierId">
+        update contact
+        <set>
+            supplier_id="",
+            gmt_modified = now()
+        </set>
+        <where>
+            id in
+            <foreach item="item" index="index" collection="ids"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </update>
+</mapper>

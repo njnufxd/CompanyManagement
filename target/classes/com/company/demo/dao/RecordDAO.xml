@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.demo.dao.RecordDAO">
+
+
+    <resultMap id="recordResultMap" type="com.company.demo.dataobject.RecordDO">
+        <id column="id" property="id"/>
+        <result column="content" property="content"/>
+        <result column="contact_id" property="contactId"/>
+        <result column="supplier_id" property="supplierId"/>
+        <result column="created_id" property="createdId"/>
+        <result column="modified_id" property="modifiedId"/>
+        <result column="gmt_created" property="gmtCreated"/>
+        <result column="gmt_modified" property="gmtModified"/>
+    </resultMap>
+    <insert id="add" parameterType="com.company.demo.dataobject.RecordDO" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO record (id,content, contact_id,supplier_id,created_id,modified_id,gmt_created,gmt_modified)
+        VALUES(#{id},#{content},#{contactId},#{supplierId},#{createdId},#{modifiedId},now(),now())
+    </insert>
+    <select id="findByContactId" resultMap="recordResultMap">
+        select * from record where contact_id=#{contactId}
+
+    </select>
+    <select id="findAll" resultMap="recordResultMap">
+        select * from record
+    </select>
+    <select id="query" resultMap="recordResultMap">
+        select * from record
+        <where>
+            <if test="content != null">
+                content like CONCAT('%',#{content},'%')
+            </if>
+            and contact_id in
+            <foreach item="item" index="index" collection="ids"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+    <select id="findByIds" resultMap="recordResultMap">
+        select * from record
+        <where>
+            id in
+            <foreach item="item" index="index" collection="ids"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </select>
+    <delete id="delete">
+        delete from record where id=#{id}
+    </delete>
+    <update id="update" parameterType="com.company.demo.dataobject.RecordDO">
+        update record
+        <set>
+            <if test="content != null">
+                content=#{content},
+            </if>
+            <if test="modifiedId != null">
+                modified_id=#{modifiedId},
+            </if>
+            gmt_modified=now()
+        </set>
+        where id=#{id}
+    </update>
+    <delete id="delByContactIds">
+        delete from record
+        <where>
+            contact_id in
+            <foreach item="item" index="index" collection="ids"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </where>
+    </delete>
+    <delete id="delBySupplierId">
+        delete from record
+        <where>
+            supplier_id = #{id}
+        </where>
+    </delete>
+
+</mapper>

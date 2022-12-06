@@ -1,0 +1,19 @@
+main {
+  font-family: SimSun;
+  padding-left: 15px;
+}
+main p,
+main h4 {
+  color: gray;
+}
+main ul.record li.box {
+  margin-bottom: 30px;
+}
+main ul.record li.box ul {
+  list-style: disc;
+  margin-left: 20px;
+  color: gray;
+}
+.star {
+  color: red;
+}

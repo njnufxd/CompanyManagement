@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+    <meta charset="UTF-8">
+    <title>联系记录详情</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/updateRecord.css">
+</head>
+
+<body>
+<header>
+    <div class="top">
+        <ul>
+            <a href="/index"><li class="index">首页</li></a>
+            <a href="/companies"><li class="companies">单位</li></a>
+            <a href="/contacts"><li class="contacts">联系人</li></a>
+            <a href="/records"><li class="records">联系记录</li></a>
+            <a href="/users"><li class="users">用户管理</li></a>
+            <a href="/suppliers"><li class="suppliers">供应商</li></a>
+            <a href=""><li class="userSuppliers">用户供应商</li></a>
+            <a href=""><li class="userContacts">用户联系人</li></a>
+            <a href="/self"><li class="self">个人信息</li></a>
+            <li class="quit" ><span class="userId" th:text="${userId}" style="display:none;"></span>
+                <span th:text="'退出'+'('+${userName}+')'"></span></li>
+        </ul>
+    </div>
+    <div class="breadcrumbs">
+        <a href="/index">首页</a>>><a href="/records">联系记录</a>>><span class="recordId" style="display: none;" th:text="${recordId}"></span>修改
+    </div>
+</header>
+<main>
+    <div class="content">
+        <h4>联系记录</h4>
+        <div class="record">
+            <ul>
+                <li>
+                    <div>单位</div>
+                    <a class="companyName" href=""></a>
+                </li>
+                <li>
+                    <div>联系人</div>
+                    <a class="contactName" href=""></a>
+                </li>
+                <li>
+                    <div>联系人电话</div>
+                    <div class="contactPhone"></div>
+                </li>
+                <li>
+                    <div>规模</div>
+                    <div class="size"></div>
+                </li>
+                <li>
+                    <div>网址</div>
+                    <div ><a class="webAddress" href=""></a></div>
+                </li>
+            </ul>
+            <ul>
+                <li>联系记录</li>
+                <textarea name="" id="" cols="30" rows="10" class="recordContent"></textarea>
+            </ul>
+            <ul>
+                <li><div>创建时间:</div><div class="createdTime"></div> </li>
+                <li><div>修改时间:</div><div class="modifiedTime"></div></li>
+                <li><div>创建人:</div><div class="createdName"></div></li>
+                <li><div>修改人:</div><div class="modifiedName"></div></li>
+                <li><div>供应商:</div><a class="supplierName" href=""></a></li>
+            </ul>
+        </div>
+        <button class="submit">修改</button>
+    </div>
+</main>
+<footer>
+    <div class="cutline"></div>
+    <div>版权信息</div>
+</footer>
+<script src="js/index.js"></script>
+<script src="js/updateRecord.js"></script>
+</body>
+
+</html>

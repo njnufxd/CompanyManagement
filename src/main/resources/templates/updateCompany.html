@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>单位详情</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/updateCompany.css">
+</head>
+
+<body>
+<header>
+    <div class="top">
+        <ul>
+            <a href="/index"><li class="index">首页</li></a>
+            <a href="/companies"><li class="companies">单位</li></a>
+            <a href="/contacts"><li class="contacts">联系人</li></a>
+            <a href="/records"><li class="records">联系记录</li></a>
+            <a href="/users"><li class="users">用户管理</li></a>
+            <a href="/suppliers"><li class="suppliers">供应商</li></a>
+            <a href=""><li class="userSuppliers">用户供应商</li></a>
+            <a href=""><li class="userContacts">用户联系人</li></a>
+            <a href="/self"><li class="self">个人信息</li></a>
+            <li class="quit" th:text="'退出'+'('+${userName}+')'"></li>
+        </ul>
+    </div>
+    <div class="breadcrumbs">
+        <a href="/index">首页</a> >> <a href="companies">单位</a> >> <a class="name" th:text="${userName}"></a> >> 修改
+    </div>
+</header>
+<main>
+
+    <div class="left">
+        <div class="title">
+            <h3>修改 <span class="id" style="display: none;" th:text="${id}"></span><span
+                    class="name"th:text="${userName}"></span></h3>
+            <i>
+                <p>带<span style="color: red;">*</span>必填</p>
+            </i>
+        </div>
+        <div class="content">
+            <ul>
+                <li>单位名称<span style="color:red ;">*</span><input type="tel" class="companyName">地址<input type="text"
+                                                                                                         class="address"></li>
+                <li>电话<input type="tel" class="tel">网址<input type="text" class="webAddress"><i><strong><a href=""
+                                                                                                          class="href">打开网站</a></strong></i></li>
+                <li><select name="province" class="province" onchange="chooseProvince()"></select>
+                    <select name="city" class="city" onchange="chooseCity()"></select>
+                    <select name="area" class="area"></select>规模<input type="number" class="size"> 星级 <input
+                            type="number" class="star_level"> 类型<input type="text" class="category"> <span
+                            class="note">J-集成商;Y-用户;C-厂家;F-厂家分支机构;K-教育厂 </span>
+                </li>
+                <li>标签<input type="text" class="labels"></li>
+                <li>
+                    <div>描述</div>
+                    <textarea name="" id="" cols="30" rows="10" class="description"></textarea>
+                </li>
+                <div class="error star"></div>
+                <li><input type="button" value="保存" class="submit"></li>
+            </ul>
+        </div>
+        <div class="add">
+            <h5>添加联系人</h5>
+            <form class="contactForm" method="post" onsubmit="return submitContact(this)">
+                <ul>
+                    <li>
+                        姓名<span style="color:red ;">*</span><input type="text" name="name">
+                        性别 <input type="text" name="gender" class="gender">
+                        职位 <input type="text" name="position">
+                        手机 <input type="tel" name="phone">
+                        手机2 <input type="tel" name="secondPhone">
+                    </li>
+
+                    <li>
+                        电话 <input type="tel" name="tel">
+                        QQ <input type="tel" name="qq">
+                        Email <input type="email" name="email">
+                    </li>
+                    <li>
+                        负责区域 <input type="text" name="responsibility">
+                    </li>
+                    <li>联系人备注 <input type="text" name="notes"></li>
+                    <div class="error star"></div>
+                    <li><input value="新建" type="submit"> </li>
+                </ul>
+            </form>
+        </div>
+        <h5>联系人</h5>
+        <div class="contact">
+            <div>
+                <div class="order">
+                        <span> 第<span class="start"></span>-<span class="end"></span> 条 共<span
+                                class="totalCount"></span>
+                            条</span>
+                </div>
+            </div>
+            <ul class="contactList">
+            </ul>
+        </div>
+        <div class="pages">
+            <ul>
+                <li class="pre">&lt前页 </li>
+                <li class="next">后页&gt</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="right">
+
+        <h4>操作</h4>
+        <ul>
+            <li class="companyList">列表</li>
+            <li class="addCompany">添加</li>
+        </ul>
+    </div>
+</main>
+<footer>
+    <div class="cutline"></div>
+    <div>版权信息</div>
+</footer>
+<script src="js/index.js"></script>
+<script src="js/updateCompany.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>联系人信息</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/updateContact.css">
+</head>
+
+<body>
+<header>
+    <div class="top">
+        <ul>
+            <a href="/index"><li class="index">首页</li></a>
+            <a href="/companies"><li class="companies">单位</li></a>
+            <a href="/contacts"><li class="contacts">联系人</li></a>
+            <a href="/records"><li class="records">联系记录</li></a>
+            <a href="/users"><li class="users">用户管理</li></a>
+            <a href="/suppliers"><li class="suppliers">供应商</li></a>
+            <a href=""><li class="userSuppliers">用户供应商</li></a>
+            <a href=""><li class="userContacts">用户联系人</li></a>
+            <a href="/self"><li class="self">个人信息</li></a>
+            <li class="quit" ><span class="userId" th:text="${userId}" style="display:none;"></span>
+                <span th:text="'退出'+'('+${userName}+')'"></span></li>
+        </ul>
+    </div>
+    <div class="breadcrumbs">
+        <a href="/index">首页</a>>><a href="/contacts">联系人</a>>><span style="display: none;"
+                                                                    class="id"th:text="${contactId}"></span><a class="contactName">test</a>>>修改
+    </div>
+</header>
+<main>
+    <div class="company">
+        <ul>
+            <li>
+                <div>名称</div>
+                <div class="companyName"></div>
+            </li>
+            <li>
+                <div>地址</div>
+                <div class="address"></div>
+            </li>
+            <li>
+                <div>电话</div>
+                <div class="companyTel"></div>
+            </li>
+            <li>
+                <div>规模</div>
+                <div class="size"></div>
+            </li>
+            <li>
+                <div>网址</div>
+                <div class="webAddress"></div>
+            </li>
+        </ul>
+        <ul>
+            <li>描述</li>
+            <li class="description"></li>
+        </ul>
+        <ul>
+            <li>最近修改时间</li>
+            <li class="time"></li>
+        </ul>
+    </div>
+    <div class="addInfo">
+        <div class="change">
+            <h4>修改联系人:<span class="contactName">fxd</span></h4>
+            <div class="action"><strong><a href="/contacts">返回</a></strong></div>
+            <ul>
+                <li>
+                    变更公司
+                    <div class="companyInput">
+                        <input type="text">
+                    </div>
+                    <span>如果未改变请留空，需要变更公司的输入公司名称中的任意词语会自动查询，选择变更后的公司全称</span>
+                </li>
+                <li>
+                    姓名<input type="text" class="name">性别<input type="text" class="gender">职位<input type="text"
+                                                                                                   class="position">
+                </li>
+                <li>
+                    手机1 <input type="tel" class="phone"> 手机2 <input type="tel" class="secondPhone">电话<input
+                        type="tel" class="tel">
+                </li>
+                <li>
+                    QQ<input type="tel" class="qq">Email <input type="email" class="email">
+                </li>
+                <li>负责区域<input type="text" class="responsibility"></li>
+                <li>联系人备注<input type="text" class="notes"></li>
+                <div class="error star contactError"></div>
+                <li><input type="button" value="保存" class="updateContact"></li>
+            </ul>
+        </div>
+        <div class="add">
+            <h4>添加联系信息</h4>
+            <div class="supplier"><span>供应商:</span> <select class="supplierName" onchange="supplier()"></select>
+                <button class="confirm" style="display: none;">确认修改</button></div>
+            <div class="contract-record">
+                <p>联系记录<span style="color: red;">*</span></p>
+                <textarea class="record-text" cols="30" rows="10"></textarea>
+            </div>
+            <div class="error star recordError"></div>
+            <input type="button" value="新建" class="newRecord">
+        </div>
+        <h4>联系记录</h4>
+        <div class="recordList">
+            <div>
+                <div class="order">
+                        <span> 第<span class="start"></span>-<span class="end"></span> 条 共<span
+                                class="totalCount"></span>
+                            条</span>
+                </div>
+            </div>
+            <div class="record-list">
+            </div>
+            <div class="pages">
+                <ul>
+                    <li class="pre">&lt前页 </li>
+                    <li class="next">后页&gt</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="cutline"></div>
+    <div>Copyright @ 2022 江苏久特教育科技股份有限公司 All Rights Reserved</div>
+</footer>
+<script src="js/index.js"></script>
+<script src="js/updateContact.js"> </script>
+</body>
+
+</html>

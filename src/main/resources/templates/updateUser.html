@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户详情</title>
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/updateUser.css">
+</head>
+
+<body>
+<header>
+    <div class="top">
+        <ul>
+            <a href="/index"><li class="index">首页</li></a>
+            <a href="/companies"><li class="companies">单位</li></a>
+            <a href="/contacts"><li class="contacts">联系人</li></a>
+            <a href="/records"><li class="records">联系记录</li></a>
+            <a href="/users"><li class="users">用户管理</li></a>
+            <a href="/suppliers"><li class="suppliers">供应商</li></a>
+            <a href=""><li class="userSuppliers">用户供应商</li></a>
+            <a href=""><li class="userContacts">用户联系人</li></a>
+            <a href="/self"><li class="self">个人信息</li></a>
+            <li class="quit" th:text="'退出'+'('+${userName}+')'"></li>
+        </ul>
+    </div>
+    <div class="breadcrumbs">
+        <a href="/index">首页</a> >> <a href="/users">用户</a> >> <span class="id" th:text="${id}"></span> >> 详情
+    </div>
+</header>
+
+<main>
+    <div class="title">用户信息（不可修改）</div>
+    <div class="content">
+        <ul>
+            <li>
+                用户名
+                <input type="text" class="userName" readonly="readonly">
+
+            </li>
+            <li>
+                Email
+                <input type="email" class="email" readonly="readonly">
+            </li>
+            <li>
+                手机
+                <input type="tel" class="phone" readonly="readonly">
+            </li>
+            <li>
+                QQ号码
+                <input type="tel" class="qq" readonly="readonly">
+            </li>
+            <li>
+                电话
+                <input type="tel" class="tel" readonly="readonly">
+            </li>
+        </ul>
+    </div>
+</main>
+<footer>
+    <div class="cutline"></div>
+    <div>版权信息</div>
+</footer>
+<script src="js/updateUser.js"></script>
+</body>
+
+</html>
