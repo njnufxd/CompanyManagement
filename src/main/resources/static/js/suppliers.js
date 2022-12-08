@@ -10,7 +10,7 @@ const id=document.querySelector(".id");
 const supplierName=document.querySelector(".supplierName");
 const search=document.querySelector(".search");
 let pageNum=1;
-let pageSize=10;
+let pageSize=100;
 let data={};
 loadingSuppliers();
 

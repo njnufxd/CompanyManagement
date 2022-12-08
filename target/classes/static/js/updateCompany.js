@@ -111,18 +111,6 @@ fetch(`/api/company/get?id=${id.innerText}`)
       });
   });
 
-var quit = document.querySelector(".quit");
-quit.addEventListener("click", function () {
-  fetch("/api/user/logout", {
-    method: "GET",
-  })
-    .then(function (response) {
-      return response.json;
-    })
-    .then(function (result) {
-      window.location.href = "/index";
-    });
-});
 
 href.addEventListener("click", function () {
   href.setAttribute("href", webAddress.value);

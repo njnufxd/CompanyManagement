@@ -29,7 +29,7 @@ let query={
 }
 pagingFetch();
 function pagingFetch() {
-    let url=`http://127.0.0.1:8080/api/record/query?pageNum=${pageNum}&pageSize=${pageSize}`;
+    let url=`/api/record/query?pageNum=${pageNum}&pageSize=${pageSize}`;
     console.log(url);
     console.log(query);
     fetch(

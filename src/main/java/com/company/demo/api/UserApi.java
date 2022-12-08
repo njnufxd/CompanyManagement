@@ -97,6 +97,7 @@ public class UserAPI {
         if (userDO.getId()==0){
             result.setCode("602");
             result.setMessage("admin用户信息不可修改");
+            return result;
         }
         User user=userService.getById(userDO.getId());
         if (user==null){
@@ -124,10 +125,9 @@ public class UserAPI {
 
     @GetMapping("/api/user/get")
     @ResponseBody
-    public Result<UserDO> get( HttpServletRequest request)
+    public Result<UserDO> get(@RequestParam("id")Long id)
     {
            Result<UserDO> result=new Result<>();
-           Long id= (Long) request.getSession().getAttribute("userId");
            List<Long> ids=new ArrayList<>();
            ids.add(id);
            result.setData(userDAO.findByIds(ids).get(0));

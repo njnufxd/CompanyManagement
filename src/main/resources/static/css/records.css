@@ -107,11 +107,10 @@ main div.content ul.box li ul li input {
   width: 100%;
 }
 main div.content div.pages {
-  height: auto;
-  width: 100%;
+  float: right;
 }
 main div.content div.pages ul {
-  float: right;
+
   margin-top: 20px;
   display: flex;
   width: auto;
@@ -127,3 +126,9 @@ main div.content div.pages ul .next {
   text-align: center;
   width: 60px;
 }
+main div.content::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
